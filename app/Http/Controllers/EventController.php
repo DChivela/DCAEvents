@@ -2,27 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Event;
 use Illuminate\Http\Request;
+
+use App\Models\Model;
 
 class EventController extends Controller
 {
+    
     public  function index() {
 
-        $nome = "Domingos";
-        $idade = 21;
+        $events = Event::all(); //Para buscar todos os dados da banco de dados, noutra situação seria usar um SELECT.
 
-        $arr = [10,20,30,40,50];
-
-        $nomes = ["Domingos", "Hamba", "Chivela"];
-
-        return view('welcome',
-        [
-            'nome' => $nome,
-            'idade' =>  $idade,
-            'profissao' => "Programador",
-            'arr' => $arr,
-            'nomes' => $nomes
-        ]);
+        return view('welcome', ['events' => $events]); //Passando para a views.
     }
 
     public function create() {
