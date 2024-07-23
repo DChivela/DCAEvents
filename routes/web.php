@@ -10,8 +10,8 @@ Route::get('/', function () {
 
 Route::get('/produtos', function () {
 
-    $busca = request('search')
-    return view('products');
+    $busca = request('search');
+    return view('products', ['busca' => $busca]);
 });
 
 //Paramêtro na rota esperando o ID
