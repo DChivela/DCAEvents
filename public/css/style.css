@@ -119,7 +119,7 @@ header {
 
 .card-participants {
     font-size: 14px;
-    color: #494848;
+    color: #757575;
 }
 /*Fim do Event List*/
 
@@ -127,12 +127,13 @@ header {
 
 footer {
     text-align: center;
-    background-color: #353e35;
+    background-color: #264275;
     color: #FFF;
     padding: 30px;
     position: absolute;
     bottom: 0;
     width: 100%;
+    height: 50px;
 }
 
 footer p {
