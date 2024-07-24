@@ -19,7 +19,7 @@
                         @foreach($events as $event)
                         <div class="card col-md-3">
                                  <img src="/img/Evento04.jpg" alt="{{ $event->title }}"> <!--Pegando o título do banco de dados -->
-                                <div class="card-body">
+                                <div class="card-date">
                                         <p>24/07/2024</p>
                                         <h5 class="card-title"> {{$event->title}} </h5>
                                         <p class="card-participants"> X Participantes</p>
