@@ -32,6 +32,6 @@ class EventController extends Controller
 
         $event->save();
 
-        return redirect('/')->with('msg','Evento criado com sucesso!'); //Para voltar ao Home
+        return redirect('/')->with('msg','Evento criado com sucesso!'); //Para voltar ao Home e enviar a mensagem de sucesso para a VIEW caso esteja tudo conforme
     }
 }
