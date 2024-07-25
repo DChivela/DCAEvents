@@ -117,6 +117,26 @@ header {
     margin-bottom: 30px;
 }
 
+/*PARTE DA PÁGINA CREATE*/
+
+#event-create-container {
+    padding: 20px;
+}
+
+#event-create-container .form-group{
+    margin-bottom: 15px;
+}
+
+#event-create-container label {
+    font-weight: bold;
+}
+
+#event-create-container input,
+#event-create-container select,
+#event-create-container textarea {
+    font-size: 14px;
+}
+
 .card-participants {
     font-size: 14px;
     color: #757575;
@@ -124,7 +144,6 @@ header {
 /*Fim do Event List*/
 
 /*Início Footer*/
-
 footer {
     text-align: center;
     background-color: #264275;
