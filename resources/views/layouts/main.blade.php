@@ -54,7 +54,16 @@
         </nav>
     </header>
     <!-- Determinando a área do nosso conteúdo. -->
-    @yield('content')
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+                @if(session('msg'))
+                <p class="msg">{{session('msg')}}</p>
+                @endif  
+                @yield('content')
+            </div>
+        </div>
+
 
     <footer>
         <p>Focus DC &copy; 2024</p>
