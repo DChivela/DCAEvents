@@ -6,9 +6,15 @@
 
 <div id="event-create-container" class="col-md-6 offset-md-3">
     <h1>Crie o seu evento</h1>
-    <form action="/events" method="POST"> <!-- Acção após clicar no botão para salvar -->
+    <form action="/events" method="POST" enctype="multipart/form-data"> <!-- Acção após clicar no botão para salvar -->
         <!-- Protecção do Laravel -->
      @csrf 
+
+     <!-- Campo do File --> 
+     <div class="form-group">
+            <label for="image">Imagem do Evento:</label>
+            <input type="file" class="form-control-file" id="image" name="image">
+        </div>
 
         <!-- Primeiro Campo - Título --> 
         <div class="form-group">

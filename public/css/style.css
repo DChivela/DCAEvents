@@ -102,12 +102,12 @@ header {
     display: flex;
 }
 
-#cards-container .card{
-    flex: 1 1 0;
+#events-container .card{
+    flex: 1 1 24%; /*Largura base*/
     max-width: 25%;
     border-radius: 10px;
     padding: 0;
-    margin: 5px;
+    margin: .5%;
 }
 
 #events-container img {
