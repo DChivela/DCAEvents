@@ -11,9 +11,6 @@
     <!-- Mudando o tiúlo de forma dinámica -->
     <title>@yield('title')</title>
 
-
-
-
     <!-- Fontes da aplicação (proveniente do Google) -->
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">
@@ -69,7 +66,8 @@
         <p>Focus DC &copy; 2024</p>
     </footer>
 
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </html>
