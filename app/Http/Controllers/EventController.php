@@ -14,8 +14,10 @@ class EventController extends Controller
 
         $search =  request('search'); //Para buscar o name que está no input.
 
-        if ($search) { //Se o campo estiver preenchido, então obedeça o que estiver abaixo
-            # code...
+        if ($search) { #Se o campo estiver preenchido, então obedeça o que estiver abaixo
+            $events = Event::where([
+               ['title', 'like', '%'.$search.'%'] 
+            ])->get();
         } else {
             $events = Event::all(); //Para buscar todos os dados da banco de dados, noutra situação seria usar um SELECT.
         }
@@ -23,7 +25,7 @@ class EventController extends Controller
 
 
 
-        return view('welcome', ['events' => $events]); //Passando para a views.
+        return view('welcome', ['events' => $events, 'search'=>$search]); //Passando para a views.
     }
 
     public function create() {
