@@ -12,7 +12,16 @@ class EventController extends Controller
     
     public  function index() {
 
-        $events = Event::all(); //Para buscar todos os dados da banco de dados, noutra situação seria usar um SELECT.
+        $search =  request('search'); //Para buscar o name que está no input.
+
+        if ($search) { //Se o campo estiver preenchido, então obedeça o que estiver abaixo
+            # code...
+        } else {
+            $events = Event::all(); //Para buscar todos os dados da banco de dados, noutra situação seria usar um SELECT.
+        }
+        
+
+
 
         return view('welcome', ['events' => $events]); //Passando para a views.
     }
@@ -26,6 +35,7 @@ class EventController extends Controller
         $event = new Event;
 
         $event->title = $request->title;
+        $event->date = $request->date;
         $event->city = $request->city;
         $event->private = $request->private;
         $event->description = $request->description;
