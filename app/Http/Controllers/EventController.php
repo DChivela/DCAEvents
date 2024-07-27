@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Event;
 use Illuminate\Http\Request;
+use App\Models\User;
 
 //use App\Models\Model;
 
@@ -22,9 +23,6 @@ class EventController extends Controller
             $events = Event::all(); //Para buscar todos os dados da banco de dados, noutra situação seria usar um SELECT.
         }
         
-
-
-
         return view('welcome', ['events' => $events, 'search'=>$search]); //Passando para a views.
     }
 
@@ -58,6 +56,9 @@ class EventController extends Controller
 
         }
 
+        $user=auth()->user();
+        $event->user_id=$user->id;
+
         $event->save();
 
         return redirect('/')->with('msg','Evento criado com sucesso!'); //Para voltar ao Home e enviar a mensagem de sucesso para a VIEW caso esteja tudo conforme
@@ -67,7 +68,17 @@ class EventController extends Controller
 
         $event = Event::findOrFail($id);
 
-        return view('events.show', ['event' => $event]);
+        $eventOwner = User::where('id', $event->user_id)->first()->toArray();
+
+        return view('events.show', ['event' => $event, 'eventOwner' => $eventOwner ]);
+    }
+
+    public function dashboard(){
+        $user = auth()->user();
+
+        $events = $user->events; //Para verificar os eventos do usuário.
+
+        return view('events.dashboard', ['events' => $events]);
     }
 
 }

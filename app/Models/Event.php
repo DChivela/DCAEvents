@@ -13,5 +13,9 @@ class Event extends Model
         'items' => 'array'
     ];
 
-    protected $dates = ['date']; //Informando ao Laravel que temos um campo novo.
+    protected $dates = ['date']; //Informando ao Laravel que temos um campo novo que é o DATE.
+    
+    public function user(){
+         return $this ->belongsTo('App/Models/User');
+    }
 }
